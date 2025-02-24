@@ -111,10 +111,10 @@
 
 		<h2>Task 5: "Pixel sampling" for texture mapping</h2>
 		Pixel sampling allows us to interpolate continuous textures across a rendered surface. Each point of the triangle being rendered are assigned uv-coordinates that represent the corresponding coordinates of the texture being sampled. Given a point on the original triangle, we can convert our xy-coordinates into barycentric coordinates and then the barycentric coordinates to uv-coordinates to find the corresponding position of our xy-coordinates within the texture. The uv-coordinates may not lie exactly at a texel in the texture, so we can perform two different sampling methods from here:
-		1. Nearest neighbor sampling takes the nearest texel to our uv-coordinates and applies the color found at said nearest texel to the original triangle. To find the nearest neighbor, we can floor our uv-coordinates and then add .5 to each coordinate to center our nearest neighbor in the middle of a texel.
-		2. Bilinear sampling takes the four nearest texels to our uv-coordinates and applies a weighted average of the values of these four texels through bilinear interpolation (which helps us find the ratio of each pixel to use). 
+		<br> <br> 1. Nearest neighbor sampling takes the nearest texel to our uv-coordinates and applies the color found at said nearest texel to the original triangle. To find the nearest neighbor, we can floor our uv-coordinates and then add .5 to each coordinate to center our nearest neighbor in the middle of a texel.
+		<br> <br> 2. Bilinear sampling takes the four nearest texels to our uv-coordinates and applies a weighted average of the values of these four texels through bilinear interpolation (which helps us find the ratio of each pixel to use). 
 
-		We can see examples of the differences in the two sampling methods below. The difference is more pronounced when we sample at rate 1 since this gives us pixels with a larger range of values than in supersampling, which already “smooths” out some bumps in our render. Bilinear sampling seems to give sharper and clearer edges overall though with smoother textures.
+		<br> <br> We can see examples of the differences in the two sampling methods below. The difference is more pronounced when we sample at rate 1 since this gives us pixels with a larger range of values than in supersampling, which already “smooths” out some bumps in our render. Bilinear sampling seems to give sharper and clearer edges overall though with smoother textures.
 		<div style="display: flex; flex-direction: column; align-items: center;">
 			<table style="width: 100%; text-align: center; border-collapse: collapse;">
 			  <tr>
@@ -144,12 +144,12 @@
 		<h2>Task 6: "Level Sampling" with mipmaps for texture mapping</h2>
 		Level sampling allows us to reduce aliasing artifacts by downsampling textures that may be displayed on objects that seem further away in the rendered image. As an object seems to fade further into the distance, we use lower-resolution versions of our texture and possibly blend various lower-resolution versions to give an illusion of depth.
 
-		To implement level sampling, we calculate the uv-coordinates of (x + 1, y) and (x, y + 1) to see how many texels correspond to a single pixel. We use a formula from lecture to then calculate the level from these new uv-coordinates. The larger du and dv are, the lower of a level we sample from.
+		<br> <br> To implement level sampling, we calculate the uv-coordinates of (x + 1, y) and (x, y + 1) to see how many texels correspond to a single pixel. We use a formula from lecture to then calculate the level from these new uv-coordinates. The larger du and dv are, the lower of a level we sample from.
 
-		Comparing the different methods of level sampling:
-		L_ZERO will always use the maximum resolution textures, resulting in the most aliasing artifacts of all methods. This method is fastest in theory as it enables us to skip du and dv calculations as well as the level calculation. If we only use L_ZERO, we can potentially only record the level zero mipmap, saving memory compared to other methods.
-		L_NEAREST uses the closest level to the desired sample, fixing some aliasing artifacts compared to L_ZERO. However, there might be abrupt transitions between different levels on what is supposed to be a continuous surface. This method is slower than L_ZERO as we need to calculate du and dv as well as the level.
-		L_LINEAR blends the textures from the two closest levels to the desired sample, fixing the most aliasing artifacts out of these three methods. This method is the slowest as we must sample from multiple texture maps rather than just a single one. This method uses the same amount of memory as L_NEAREST as we need to keep track of all the mipmap levels.
+		<br> <br> Comparing the different methods of level sampling:
+		<br> <br> L_ZERO will always use the maximum resolution textures, resulting in the most aliasing artifacts of all methods. This method is fastest in theory as it enables us to skip du and dv calculations as well as the level calculation. If we only use L_ZERO, we can potentially only record the level zero mipmap, saving memory compared to other methods.
+		<br> <br> L_NEAREST uses the closest level to the desired sample, fixing some aliasing artifacts compared to L_ZERO. However, there might be abrupt transitions between different levels on what is supposed to be a continuous surface. This method is slower than L_ZERO as we need to calculate du and dv as well as the level.
+		<br> <br> L_LINEAR blends the textures from the two closest levels to the desired sample, fixing the most aliasing artifacts out of these three methods. This method is the slowest as we must sample from multiple texture maps rather than just a single one. This method uses the same amount of memory as L_NEAREST as we need to keep track of all the mipmap levels.
 
 		<div style="display: flex; flex-direction: column; align-items: center;">
 			<table style="width: 100%; text-align: center; border-collapse: collapse;">

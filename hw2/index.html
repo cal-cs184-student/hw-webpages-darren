@@ -265,7 +265,44 @@
 			  </tr>
 			</table>
 		</div>
-			<p>As we subdivide, sharp corners and edges get smoothed out as they get averaged out by their surrounding geometry. We can see a prime example of this through the smoothing of the cube corners. This effect can be reduced by splitting more edges and generally creating more geometry around sharp edges, as the averaged values will be closer to the original value then.</p>
+			<p>As we subdivide, sharp corners and edges get smoothed out as they get averaged out by their surrounding geometry. We can see a prime example of this through the smoothing of the cube corners. This effect can be reduced by splitting more edges and generally creating more geometry around sharp edges, as the averaged values will be closer to the original value then.
+				To see an example of this, we compare a corner of a cube. We can see that when we split the edges close to a corner, the corner retains a lot more of its definition as we subdivide.
+				Note that for the side views, the specified corner is the upper left corner.
+			
+			</p>
+
+			<div style="display: flex; flex-direction: column; align-items: center;">
+				<table style="width: 100%; text-align: center; border-collapse: collapse;">
+				  <tr>
+					<td style="text-align: center;">
+					  <img src="./images/7_1.png" width="400px"/>
+					  <figcaption>base cube</figcaption>
+					</td>
+					<td style="text-align: center;">
+						<img src="./images/7_2.png" width="400px"/>
+						<figcaption>subdivided 3 times, front view</figcaption>
+					</td>
+					<td style="text-align: center;">
+						<img src="./images/7_3.png" width="400px"/>
+					  <figcaption>subdivided 3 times, side view</figcaption>
+					  </td>
+				  </tr>
+				  <tr>
+					<td style="text-align: center;">
+						<img src="./images/7_4.png" width="400px"/>
+						<figcaption>base cube, corner edges split several times</figcaption>
+					</td>
+					<td style="text-align: center;">
+						<img src="./images/7_6.png" width="400px"/>
+						<figcaption>subdivided 3 times, front view</figcaption>
+					</td>
+					<td style="text-align: center;">
+						<img src="./images/7_5.png" width="400px"/>
+					  <figcaption>subdivided 3 times, side view</figcaption>
+					  </td>
+				  </tr>
+				</table>
+			</div>
 
 			<p>To even out the above cube and make it more symmetrical, I split the edge going across each face of the cube. This makes the subdivided mesh more symmetrical as the original mesh is now symmetrical.</p>
 

@@ -44,7 +44,7 @@
 		-->
 
 		<h2>Overview</h2>
-		Give a high-level overview of what you implemented in this homework. Think about what you've built as a whole. Share your thoughts on what interesting things you've learned from completing the homework.
+		In this homework, I implemented a path tracer beginning with ray generation. I then implemented bounding boxes to speed up the render process, and then I implemented both direct and indirect lighting using Monte Carlo integration to estimate some integrals, making the renders look more realistic. Finally, I implemented adaptive sampling to make sampling from more complex geometries more optimized. Overall, I thought it was interesting to see how intertwined and integral the actual optimizations and approximations of the algorithms were to creating this path tracer. Many of these computations would be infeasible without approximations using Monte Carlo estimators or without bounding boxes.
 
 		<h2>Part 1: Ray Generation and Scene Intersection</h2>
 		Beginning with the ray generation process, we can generate a camera direction ray beginning with the transformation (x, y) -> ((2 * x - 1) * tan(radians(hFov) / 2), (2 * y - 1) * tan(radians(vFov) / 2), -1) to transform the image position to the camera position. Applying the camera to world transformation to this ray will give us an unnormalized direction vector, and combined with the position of the camera we are able to construct the full camera ray. 

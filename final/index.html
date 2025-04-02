@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+		<style>
+			h1 {
+				text-align: center;
+			}
+
+			.container {
+				margin: 0 auto;
+				padding: 60px 20%;
+			}
+
+			figure {
+				text-align: center;
+			}
+
+			img {
+				display: inline-block;
+			}
+
+			body {
+				font-family: 'Inter', sans-serif;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+		<h1>CS184/284A Spring 2025 Final Project Proposal: Polygone</h1>
+		<div style="text-align: center;">Names: Darren Shen, Christopher Hoang, Walter Wu, Michael Setchko Palmerlee</div>
+
+		<br>
+
+		Link to webpage: <a href="https://cal-cs184-student.github.io/hw-webpages-darren/hw1/index.html">https://cal-cs184-student.github.io/hw-webpages-darren/hw1/index.html</a>
+		
+
+		<!--
+		We've already added one heading per task, to make your write-up as navigable when grading. Please fit your write-up within these sections!
+		-->
+
+		<h2>Overview</h2>
+		The problem that we are trying to solve revolves around over-complicated meshes, and we are aiming to simplify and regularize them. We were inspired by the indie game developer sphere, where many solo developers may need to use community-created meshes to achieve their goals. However, importing any random mesh off of the internet might result in the developer ruining their game’s performance by incorporating something like a toothbrush with 5000 polygons. This is bad for both the developer and the eventual player of the game.
+
+		<h2>Goals and Deliverables</h2>
+        We plan to figure out the best methods and algorithms to regularize and simplify meshes. Specifically, we will be implementing isotropic remeshing with Voronoi diagrams and quadric error mesh simplification. Using these algorithms, we want to investigate if we can regularize and simplify the geometry of meshes while still preserving the same structure.
+        We will present before and after examples of the remeshing techniques we implement to demonstrate their effectiveness. For both regularization and simplification, we will evaluate our success based on visual results. For regularization, we aim for each polygon in our mesh to be the same size, while for simplication, we want the general shape of the mesh to remain the same. To emphasize the effects of our algorithms, we will construct meshes containing polygons of largely varying sizes as overly complicated meshes.
+
+        <br> <br> We hope to successfully implement these algorithms. We have given ourselves an extra week dedicated to fine-tuning our example results and creating our write-up, but we will use some of that time in the event that we fall behind. If we are ahead of schedule, we will implement alternate algorithms for simplifying meshes and we will compare the results of the different algorithms. We will discuss the situations in which one algorithm might perform better than the other. Continuing with our work on meshes, we may also build off of project 2's subdivision schemes and implement some other alternate schemes. 
+
+		<h2>Schedule</h2>
+        Week 1: Implement Edge Collapse and Vertex Shift
+        <br> Week 2: Implement Isotropic Remeshing (regularization)
+        <br> Week 3: Implement Quadric Error Mesh Simplification
+        <br> Week 4: Finish Write-Up
+
+
+		<h2>Resources</h2>
+		We will be building off of project 2's implementation of meshes as our boilerplate code.
+
+        <br> <br> Additional Resources:
+        <br>   1. <a href="https://cs184.eecs.berkeley.edu/sp25/assets/lectures/08-meshes.pdf">CS184 Slides</a>
+        <br>   2. <a href="https://www.hao-li.com/cs599-ss2015/slides/Lecture09.1.pdf">Remeshing</a>
+        <br>   3. <a href="https://graphics.stanford.edu/courses/cs468-12-spring/LectureSlides/13_Remeshing1.pdf ">Isotropic Remeshing</a>
+        <br>   4. <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/12/Isotropic-Remeshing-with-Fast-and-Exact-Computation-of-Restricted-Voronoi-Diagram.pdf">Isotropic Remeshing with Efficient Voronoi Diagrams</a>
+        <br>   5. <a href="https://www.cs.cmu.edu/~./garland/Papers/quadrics.pdf
+        https://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15864-s04/www/slides/MeshSimplification.pdf
+        ">Mesh Simplification</a>
+		</div>
+	</body>
+</html>
